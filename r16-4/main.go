@@ -3,13 +3,22 @@ package main
 import "fmt"
 
 var (
-	arrProdID = []int{211, 262, 211, 216}
+	arrProdID = []string{"Noah", "Jesse", "Noah", "Mary"}
 	arrSales  = []int{4, 3, 5, 6}
 
-	totHash = map[int]int{}
+	totHash = map[string]int{}
 )
 
 func main() {
+	fmt.Println("Here are the players' scores:")
+	for i := 0; i < len(arrProdID); i++ {
+		fmt.Printf("%v: %v points\n", arrProdID[i], arrSales[i])
+	}
+
+	fmt.Printf("\n\n******************************\n\n")
+
+	fmt.Println("Here are the players' total scores:")
+
 	// Iterate through the Product ID array
 	for k, v := range arrProdID {
 		totHash[v] = totHash[v] + arrSales[k]
